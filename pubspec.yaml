@@ -1,14 +1,10 @@
 name: colored_log
-description: A starting point for Dart libraries or applications.
+description: An awesome logging package for dart. Makes debugging and development more interesting
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/thisisprabhat/colored_log.git
 
 environment:
   sdk: ^3.6.1
-
-# Add regular dependencies here.
-dependencies:
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^5.0.0

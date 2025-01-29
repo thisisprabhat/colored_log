@@ -37,7 +37,7 @@ class ColoredLog {
           ? ''
           : _logs == LogType.logs
               ? name
-              : '[$name]',
+              : '[$name] ',
       color: color,
       background: background,
       style: style,
