@@ -39,19 +39,19 @@ void main() {
   // Red-colored text
   // name is optional
   ColoredLog.red(
-    "This is a red log message.",
+    "This is a red log message.\n",
     name: 'Red Log',
   );
 
   // Custom background color
   ColoredLog.black(
-    "This log has a green background.",
+    "This log has a green background.\n",
     background: LogColor.green,
   );
 
   // Bold yellow text
   ColoredLog.yellow(
-    "This log is bold and yellow.",
+    "This log is bold and yellow.\n",
     style: LogStyle.bold,
   );
 
@@ -61,15 +61,28 @@ void main() {
     style: LogStyle.italicized,
   );
 
+  //Auto Coloring based on value type
+  ColoredLog(true, name: 'Bool');
+  ColoredLog('Hello World', name: 'String');
+  ColoredLog(5342.44, name: 'Num');
+  ColoredLog(null, name: 'Null');
+
   // Blinking text
   ColoredLog.red(
-    "This is a blinking log!",
-    style: LogStyle.blinkSlow,
+    "This is a blinking log!\n",
+    name: 'Rapid Blinking Text',
+    style: LogStyle.blinkRapid,
   );
+
+  // It formats json and prints in colored format
+  ColoredLog(jsonDecode(jsonString), name: 'Json Object');
 }
 
 
 ```
+ > Output
+
+![Output.png](example/images/log%20output.gif)
 
 ### Advanced Styling
 Combine multiple styles to create unique logs that stand out.

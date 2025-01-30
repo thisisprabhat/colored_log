@@ -4,12 +4,15 @@ import '/enums/log_color.dart';
 import '/enums/log_style.dart';
 import '/enums/log_type.dart';
 
+import 'formatted_text.dart';
+
 class ColoredLog {
 //! Constructor with all properties ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ColoredLog(
     dynamic message, {
     LogColor? color,
     String? name,
+    bool autoColoring = true,
     LogColor? background,
     LogStyle? style,
   }) {
@@ -17,6 +20,7 @@ class ColoredLog {
       message,
       color: color ?? _defaultColor,
       background: background,
+      auto: autoColoring,
       style: style,
       name: name,
     );
@@ -29,6 +33,7 @@ class ColoredLog {
     String? name,
     LogColor? background,
     LogStyle? style,
+    bool auto = false,
   }) {
     if (_logs == LogType.hideLogs) return;
 
@@ -43,12 +48,14 @@ class ColoredLog {
       style: style,
     );
 
-    String coloredMessage = getStylizedText(
-      message,
-      background: background,
-      color: color,
-      style: style,
-    );
+    String coloredMessage = auto
+        ? getColoredObject(message)
+        : getStylizedText(
+            message,
+            background: background,
+            color: color,
+            style: style,
+          );
 
     if (_logs == LogType.print) {
       print('${name == null ? '' : coloredName}$coloredMessage');
@@ -77,6 +84,31 @@ class ColoredLog {
         .split('\n')
         .map((line) => '$colorCode$backgroundCode$styleCode$line$reset')
         .join('\n');
+  }
+
+  /// It returns stylized text based on object type
+  static String getColoredObject(dynamic value) {
+    if (value is Map<String, dynamic>) {
+      return FormattedText.formatJsonObjectWithColors(value);
+    } else if (value is String) {
+      return '"${ColoredLog.getStylizedText(value, color: LogColor.cyan)}"';
+    } else if (value is num) {
+      return ColoredLog.getStylizedText(value, color: LogColor.blue);
+    } else if (value is bool) {
+      return ColoredLog.getStylizedText(
+        value,
+        color: LogColor.green,
+        style: LogStyle.bold,
+      );
+    } else if (value == null) {
+      return ColoredLog.getStylizedText(
+        value,
+        color: LogColor.red,
+        style: LogStyle.italicized,
+      );
+    } else {
+      return ColoredLog.getStylizedText(value, color: LogColor.magenta);
+    }
   }
 
   //! Static coloredLogs for quick access ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -310,7 +342,7 @@ class ColoredLog {
   /// When using constructor directly, then the default color is used
   static set setDefaultColor(LogColor color) => _defaultColor = color;
 
-  static LogType _logs = LogType.logs;
+  static LogType _logs = LogType.print;
   static bool _isSetterUsed = false;
 
   ///### Setting logs type globally for the entire project
