@@ -22,7 +22,7 @@ class ColoredLog {
     );
   }
 
-  //! This is common method for logging ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //! This is common method for logging ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   static _customLog(
     dynamic message, {
     required LogColor color,
@@ -79,7 +79,7 @@ class ColoredLog {
         .join('\n');
   }
 
-  //! Static coloredLogs for quick access ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //! Static coloredLogs for quick access ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   static black(
     var message, {
     String? name,
@@ -310,7 +310,7 @@ class ColoredLog {
   /// When using constructor directly, then the default color is used
   static set setDefaultColor(LogColor color) => _defaultColor = color;
 
-  static LogType _logs = LogType.print;
+  static LogType _logs = LogType.logs;
   static bool _isSetterUsed = false;
 
   ///### Setting logs type globally for the entire project
