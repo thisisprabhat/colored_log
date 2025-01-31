@@ -5,5 +5,6 @@ void main() {
   ColoredLog.info("This is an info message.");
   ColoredLog.warning("This is a warning message.", color: LogColor.yellow);
   ColoredLog.error("This is an error message.", color: LogColor.red);
+  ColoredLog.success("This is an error message.", color: LogColor.red);
 }
 ```

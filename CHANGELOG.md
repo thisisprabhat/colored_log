@@ -1,3 +1,7 @@
+## 1.2.0
+- Added object Formatter
+- Updated example
+
 ## 1.1.1
 - Added Json Formatter
 - Updated Example and readme
@@ -5,7 +9,6 @@
 
 
 ## 1.0.0
-
 - Initial release of the ColoredLog package with rich logging features
 - Support for colorizing log messages.
 - Ability to change background color of logs.

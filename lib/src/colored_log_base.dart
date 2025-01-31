@@ -87,11 +87,15 @@ class ColoredLog {
   }
 
   /// It returns stylized text based on object type
-  static String getColoredObject(dynamic value) {
+  static String getColoredObject(dynamic value, {bool stringQuotes = false}) {
     if (value is Map<String, dynamic>) {
       return FormattedText.formatJsonObjectWithColors(value);
+    } else if (value.toString().startsWith(value.runtimeType.toString())) {
+      return FormattedText.formatDartObjectString(value);
     } else if (value is String) {
-      return '"${ColoredLog.getStylizedText(value, color: LogColor.cyan)}"';
+      return stringQuotes
+          ? '"${ColoredLog.getStylizedText(value, color: LogColor.cyan)}"'
+          : ColoredLog.getStylizedText(value, color: LogColor.cyan);
     } else if (value is num) {
       return ColoredLog.getStylizedText(value, color: LogColor.blue);
     } else if (value is bool) {

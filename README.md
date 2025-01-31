@@ -36,7 +36,7 @@ You can customize the color, background, and style of your logs.
 import 'package:colored_log/colored_log.dart';
 
 void main() {
-  // Red-colored text
+ // Red-colored text
   // name is optional
   ColoredLog.red(
     "This is a red log message.\n",
@@ -75,7 +75,13 @@ void main() {
   );
 
   // It formats json and prints in colored format
-  ColoredLog(jsonDecode(jsonString), name: 'Json Object');
+  ColoredLog(product.toMap(), name: 'Json Object');
+
+  print('');
+
+  // It formats object and prints in colored format
+  // if toString() is overriden and formated in correct way
+  ColoredLog(product, name: 'Product Object', color: LogColor.yellow);
 }
 
 

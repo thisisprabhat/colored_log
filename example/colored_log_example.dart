@@ -1,6 +1,7 @@
-import 'dart:convert';
-
 import 'package:colored_log/colored_log.dart';
+
+import 'models/name_id.dart';
+import 'models/product.dart';
 
 void main() {
   // Red-colored text
@@ -42,8 +43,25 @@ void main() {
   );
 
   // It formats json and prints in colored format
-  ColoredLog(jsonDecode(jsonString), name: 'Json Object');
+  ColoredLog(product.toMap(), name: 'Json Object');
+
+  print('');
+
+  // It formats object and prints in colored format
+  // if toString() is overriden and formated in correct way
+  ColoredLog(product, name: 'Product Object', color: LogColor.yellow);
 }
 
-final jsonString =
-    '''{"id":1,"title":"Essence Mascara Lash Princess","description":"The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects.","price":9.99,"tags":["beauty","mascara"],"thumbnail":"https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png","isSaved":false,"location":null}''';
+Product product = Product(
+  id: 1,
+  name: 'One Plus Nord 4',
+  description: '8GB 256 variant',
+  price: 20000.0,
+  available: 39384,
+  isAvailable: true,
+  status: 'active',
+  category: NameId(
+    id: 343,
+    name: 'smartphone',
+  ),
+);
