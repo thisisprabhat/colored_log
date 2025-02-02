@@ -1,3 +1,7 @@
+## 1.2.1
+- Updated docs
+- Changed output screenshot
+
 ## 1.2.0
 - Added object Formatter
 - Updated example

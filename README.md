@@ -1,8 +1,11 @@
 # ColoredLog
-A feature-rich, simple-to-use logging package for Dart that allows you to colorize logs, change background colors, stylize  and much more! Perfect for both development and debugging.
+A feature-rich, simple-to-use logging package for Dart that allows you to colorize logs, change background colors, stylize and much more! Perfect for both development and debugging.
+
+Don't using boring `print()` anymore
 
 ## Features
 - **Colorize Logs**: Add colors to log messages for easy identification.
+- **Disable Logs**: We can disable logs all over the project using just single line statement.
 - **Custom Background Colors**: Change the background color of your logs for better visibility.
 - **Text Stylization**: Bold, italic, underline, and more, stylize your logs for better emphasis.
 - **Blinking Logs**: Make log messages blink to grab attention.
@@ -88,7 +91,8 @@ void main() {
 ```
  > Output
 
-![Output.png](example/images/log%20output.gif)
+![Output.png](example/images/output.png)
+![blink_log.png](example/images/blink_log.gif)
 
 ### Advanced Styling
 Combine multiple styles to create unique logs that stand out.
@@ -99,6 +103,7 @@ void main() {
     color: LogColor.blue,
     backgroundColor: LogColor.yellow,
     style: LogStyle.bold,
+    autoColoring: false,
     );
 }
 ```
@@ -112,6 +117,9 @@ ColoredLog.setDefaultColor=LogColor.yellow;
 //enum LogType { print, logs, hideLogs }
 //We need to make sure to run it on start
 ColoredLog.setLogType=LogType.print;
+
+//To hide logs 
+ColoredLog.setLogType=LogType.hideLogs;
 ```
 
 ## Notes
@@ -121,3 +129,6 @@ The package is designed for simplicity but offers plenty of flexibility for adva
 
 ## License
 This package is licensed under the MIT License.
+
+## Maintainers
+- [Prabhat Kumar](https://github.com/thisisprabhat)
