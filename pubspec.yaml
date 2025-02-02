@@ -16,7 +16,6 @@ topics:
 - debug
 - color
 - console
-- terminal
 
 platforms:
   android:
