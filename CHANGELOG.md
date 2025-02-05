@@ -1,3 +1,6 @@
+## 1.2.2
+- readme update
+
 ## 1.2.1
 - Updated docs
 - Changed output screenshot
