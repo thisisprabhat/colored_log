@@ -1,7 +1,8 @@
 # ColoredLog
-A feature-rich, simple-to-use logging package for Dart that allows you to colorize logs, change background colors, stylize and much more! Perfect for both development and debugging.
+Say no to ***boring*** `print()` statement.<br>
+Bring colors and fun to your logs using `ColoredLogs()`. 
 
-Don't using boring `print()` anymore
+A feature-rich, simple-to-use logging package for Dart that allows you to colorize logs, change background colors, stylize and much more! Perfect for both development and debugging.
 
 ## Features
 - **Colorize Logs**: Add colors to log messages for easy identification.
@@ -131,4 +132,6 @@ The package is designed for simplicity but offers plenty of flexibility for adva
 This package is licensed under the MIT License.
 
 ## Maintainers
-- [Prabhat Kumar](https://github.com/thisisprabhat)
+
+![@thisisprabhat](https://avatars.githubusercontent.com/thisisprabhat?s=100&v=1)<br>
+[Prabhat Kumar](http://github.com/thisisprabhat)
