@@ -1,5 +1,9 @@
+## 1.3.2
+- ColoredLog logo added
+
 ## 1.3.1
 - Dio Interceptor export was missing
+
 ## 1.3.0
 - Dio Interceptor added to ColoredLog all api requests
 
