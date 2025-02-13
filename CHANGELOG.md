@@ -1,3 +1,6 @@
+## 1.3.0
+- Dio Interceptor added to ColoredLog all api requests
+
 ## 1.2.2
 - readme update
 

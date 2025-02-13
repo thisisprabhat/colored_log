@@ -1,9 +1,11 @@
 import 'package:colored_log/colored_log.dart';
+import 'package:colored_log/src/dio_interceptor.dart';
+import 'package:dio/dio.dart';
 
 import 'models/name_id.dart';
 import 'models/product.dart';
 
-void main() {
+void main() async {
   // Red-colored text
   // name is optional
   ColoredLog.red(
@@ -50,6 +52,22 @@ void main() {
   // It formats object and prints in colored format
   // if toString() is overriden and formated in correct way
   ColoredLog(product, name: 'Product Object', color: LogColor.yellow);
+
+  print('');
+
+  //Adding  Dio Interceptors
+  Dio dio = Dio();
+  dio.interceptors.add(ColoredLogDioInterceptor(showCurl: true));
+
+  // Performing a dio request
+  await dio.get(
+    'https://dummyjson.com/products/1',
+    queryParameters: {'query': 'testquery'},
+    data: {'status': 'active'},
+    options: Options(headers: {"Content-Type": "application/json"}),
+  );
+
+  print('');
 }
 
 Product product = Product(

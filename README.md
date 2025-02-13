@@ -6,6 +6,7 @@ A feature-rich, simple-to-use logging package for Dart that allows you to colori
 
 ## Features
 - **Colorize Logs**: Add colors to log messages for easy identification.
+- **Colorize api requests**: Console your all api calls using `ColoredLogDioInterceptor()`.
 - **Disable Logs**: We can disable logs all over the project using just single line statement.
 - **Custom Background Colors**: Change the background color of your logs for better visibility.
 - **Text Stylization**: Bold, italic, underline, and more, stylize your logs for better emphasis.
@@ -108,6 +109,29 @@ void main() {
     );
 }
 ```
+
+### Using Dio Interceptor
+- When we use dio interceptor It Will log all requests, responses and errors
+- Simple to setup
+- we just need to add a dio interceptor `ColoredLogDioInterceptor()` for this setup
+```dart
+void main() async{
+  //Adding  Dio Interceptors
+  Dio dio = Dio();
+  dio.interceptors.add(ColoredLogDioInterceptor(showCurl: true)); //This is the only single line setup that we need
+
+  // Performing a dio request
+  await dio.get(
+    'https://dummyjson.com/products/1',
+    queryParameters: {'query': 'testquery'},
+    data: {'status': 'active'},
+    options: Options(headers: {"Content-Type": "application/json"}),
+  );
+}
+```
+Console log
+![Dio Inteceptor](example/images/dio_interceptor.png)
+
 ## Config
 We can set default log color and logType as follow
 ```dart
