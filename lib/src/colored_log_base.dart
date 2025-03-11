@@ -94,7 +94,7 @@ class ColoredLog {
       return FormattedText.formatDartObjectString(value);
     } else if (value is String) {
       return stringQuotes
-          ? '"${ColoredLog.getStylizedText(value, color: LogColor.cyan)}"'
+          ? "'${ColoredLog.getStylizedText(value, color: LogColor.cyan)}'"
           : ColoredLog.getStylizedText(value, color: LogColor.cyan);
     } else if (value is num) {
       return ColoredLog.getStylizedText(value, color: LogColor.blue);

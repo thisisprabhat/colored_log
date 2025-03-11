@@ -1,3 +1,6 @@
+## 1.3.3
+- Allowing old dart version support `'>=2.18.0'`
+
 ## 1.3.2
 - ColoredLog logo added
 

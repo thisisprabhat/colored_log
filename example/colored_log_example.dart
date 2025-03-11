@@ -1,5 +1,4 @@
 import 'package:colored_log/colored_log.dart';
-import 'package:colored_log/src/dio_interceptor.dart';
 import 'package:dio/dio.dart';
 
 import 'models/name_id.dart';

@@ -1,4 +1,4 @@
-library;
+library colored_log;
 
 export 'src/colored_log_base.dart';
 export 'src/dio_interceptor.dart';
