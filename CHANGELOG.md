@@ -1,3 +1,5 @@
+## 1.3.4
+- Added Default log type based on platform
 ## 1.3.3
 - Allowing old dart version support `'>=2.18.0'`
 
