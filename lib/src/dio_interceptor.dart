@@ -137,16 +137,16 @@ class ColoredLogDioInterceptor extends Interceptor {
     ColoredLog.yellow(
       data,
       name:
-          'Response(${response.statusCode}) -- ${method.toUpperCase()} -- $uri',
+          '${method.toUpperCase()} Response[${response.statusCode}] - ($uri) ',
     );
   }
 
   void _logOnError(DioException err) {
     if (!showError) return;
     ColoredLog.red(
-      '${err.response?.data}',
+      err.response?.data,
       name:
-          'DioException -- ${err.response?.statusCode ?? ''}(${err.response?.statusMessage ?? ''}) -- ${err.type.name}',
+          'DioException -- ${err.response?.statusCode ?? ''}(${err.response?.statusMessage ?? ''}) -- ${err.type.name} -- (${err.requestOptions.uri.normalizePath().path})',
     );
   }
 

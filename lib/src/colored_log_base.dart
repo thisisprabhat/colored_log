@@ -346,7 +346,10 @@ class ColoredLog {
   /// When using constructor directly, then the default color is used
   static set setDefaultColor(LogColor color) => _defaultColor = color;
 
-  static LogType _logs = LogType.print;
+  static final _isFlutter = const bool.fromEnvironment('dart.library.ui');
+  static LogType? _defaultLogs;
+  static LogType get _logs =>
+      _defaultLogs ?? (_isFlutter ? LogType.logs : LogType.print);
   static bool _isSetterUsed = false;
 
   ///### Setting logs type globally for the entire project
@@ -362,6 +365,6 @@ class ColoredLog {
   static set setLogType(LogType type) {
     if (_isSetterUsed) return;
     _isSetterUsed = true;
-    _logs = type;
+    _defaultLogs = type;
   }
 }
