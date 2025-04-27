@@ -1,4 +1,5 @@
 import 'package:colored_log/colored_log.dart';
+
 import 'package:dio/dio.dart';
 
 import 'models/name_id.dart';
@@ -67,6 +68,29 @@ void main() async {
   );
 
   print('');
+
+  //Colored Markdown formatting
+  ColoredLog.markdown(
+    '''
+# Heading 1
+### Heading 3
+
+`inlineCode`
+
+> This is example code
+```dart
+final a = 4;
+final b = 3;
+print("a + b is \${a + b}");
+```
+## Bullet Points
+- This is example bullet point one
+- This is example bullet point two
+
+**bold** text
+''',
+    name: 'Example Markdown log',
+  );
 }
 
 Product product = Product(

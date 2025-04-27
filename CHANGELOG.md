@@ -1,5 +1,10 @@
+## 1.4.0
+- Colored markdown formatter added
+- Useful in printing documentations 
+
 ## 1.3.4
 - Added Default log type based on platform
+
 ## 1.3.3
 - Allowing old dart version support `'>=2.18.0'`
 

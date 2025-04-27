@@ -26,6 +26,17 @@ class ColoredLog {
     );
   }
 
+  static markdown(dynamic message, {String? name}) {
+    final markdown =
+        FormattedText.formatMarkdownStringToColors(message, name: name);
+    if (_logs == LogType.hideLogs) return;
+    if (_logs == LogType.print) {
+      print(markdown);
+    } else if (_logs == LogType.logs) {
+      console.log(markdown, name: name ?? 'Markdown');
+    }
+  }
+
   //! This is common method for logging ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   static _customLog(
     dynamic message, {

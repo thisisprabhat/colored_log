@@ -147,6 +147,29 @@ ColoredLog.setLogType=LogType.print;
 ColoredLog.setLogType=LogType.hideLogs;
 ```
 
+## Colored markdown formatter
+```dart
+//Colored Markdown formatting
+ColoredLog.markdown('''
+# Heading 1
+### Heading 3
+
+`inlineCode`
+
+> This is example code
+```dart
+final a = 4;
+final b = 3;
+print("a + b is \${a + b}");
+```
+## Bullet Points
+- This is example bullet point one
+- This is example bullet point two
+
+**bold** text
+''');
+```
+
 ## Notes
 This package is designed to work best in environments that support ANSI escape codes (e.g., most terminal/console applications).
 Blinking logs may not be supported in all terminal environments.
