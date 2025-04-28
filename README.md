@@ -150,24 +150,24 @@ ColoredLog.setLogType=LogType.hideLogs;
 ## Colored markdown formatter
 ```dart
 //Colored Markdown formatting
-ColoredLog.markdown('''
+ColoredLog.markdown("""
 # Heading 1
 ### Heading 3
 
 `inlineCode`
 
-> This is example code
-```dart
-final a = 4;
-final b = 3;
-print("a + b is \${a + b}");
-```
 ## Bullet Points
 - This is example bullet point one
 - This is example bullet point two
 
 **bold** text
-''');
+
+> This is example code
+```dart
+final a = 4;
+final b = 3;
+print("a + b is \${a + b}");```
+""");
 ```
 
 ## Notes
